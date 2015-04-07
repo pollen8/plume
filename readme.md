@@ -1,20 +1,16 @@
-Create Virtual machine / vagrant
-=================================
-https://confluence.jetbrains.com/display/PhpStorm/Getting+started+with+Vagrant+in+PhpStorm
-http://www.dev-metal.com/setup-professional-local-server-virtual-machine-vagrant-phpstorm/
+This is a demo app showing integration between Share.js (http://sharejs.org/) and Quill.js (http://quilljs.com/)
 
-Set up server
-=============
-turn off nginx send file:
-> sudo vi /etd/nginx/nginx.conf
+First of all run:
+ 
+```npm install```
+ 
+ to install this demo's dependencies.
 
-https://abitwiser.wordpress.com/2011/02/24/virtualbox-hates-sendfile/
+The main issue I had with this integration was figuring out how to use the rich-text OT type on the browser side.
+After a fair amount of trial and error, I hacked together a working front end version of the file which you will need to:
 
-web root @cd /usr/share/nginx/html
-cd 
+```
+ copy from www/rich-text.js to node_modules/share/webclient
+```
 
-if you get issues with npm erroring on symlinks do:
-
-npm install foo --no-bin-links
-
-// 
+The demo uses sharejs to deal with the editor changes, and a separate web socket to handle the cursor locations.
