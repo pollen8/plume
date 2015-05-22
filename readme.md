@@ -10,7 +10,7 @@ The main issue I had with this integration was figuring out how to use the rich-
 After a fair amount of trial and error, I hacked together a working front end version of the file which you will need to:
 
 ```
- copy from www/rich-text.js to node_modules/share/webclient
+ copy from www/rich-text.js to node_modules/share/dist
 ```
 
 The demo uses sharejs to deal with the editor changes, and a separate web socket to handle the cursor locations.
